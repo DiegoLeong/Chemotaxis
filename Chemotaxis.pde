@@ -1,9 +1,11 @@
  //declare bacteria variables here
- Bacteria[] bob;   
+ PImage img;
+ Bacteria[] bob;
  void setup()   
  {     
  	//initialize bacteria variables here
  	size(500,500);
+  img = loadImage("ainsely.png");
   bob = new Bacteria[10000];
   for(int i=0; i < bob.length; i++)
   {
@@ -16,6 +18,7 @@
   for(int i=0; i < bob.length; i++){
   bob[i].show();
   bob[i].Walk();
+  image(img,0,0);
   }   
  }  
 class Bacteria
@@ -27,7 +30,7 @@ class Bacteria
  }
  void Walk()
  {
-  
+
   myX = myX + (int)(Math.random()*7)-3;
   myY = myY + (int)(Math.random()*7)-3;
  }
