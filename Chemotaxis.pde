@@ -4,9 +4,10 @@
  void setup()   
  {     
  	//initialize bacteria variables here
- 	size(500,500);
+  frameRate(60);
+ 	size(1000,1000);
   img = loadImage("ainsely.png");
-  bob = new Bacteria[10000];
+  bob = new Bacteria[20];
   for(int i=0; i < bob.length; i++)
   {
     bob[i]=new Bacteria();
@@ -18,25 +19,27 @@
   for(int i=0; i < bob.length; i++){
   bob[i].show();
   bob[i].Walk();
-  image(img,0,0);
+  
   }   
  }  
 class Bacteria
 {
+  float uniscale = 0.5;
   int myX, myY;
  Bacteria()
  {
-  myX = myY = 250;
+  myX = myY = 500;
  }
  void Walk()
  {
 
-  myX = myX + (int)(Math.random()*7)-3;
-  myY = myY + (int)(Math.random()*7)-3;
+  myX = myX + (int)(Math.random()*11)-5;
+  myY = myY + (int)(Math.random()*11)-5;
  }
  void show()
  {
  	noStroke();
-  ellipse(myX,myY,4,4); 
+  image(img,myX,myY,300*uniscale,450*uniscale);
+  //ellipse(myX,myY,4,4); 
  }
 }
