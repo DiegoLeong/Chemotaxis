@@ -24,6 +24,7 @@
  }  
 class Bacteria
 {
+  //conversionX and conversionY could be useful
   float uniscale = 0.5;
   int myX, myY;
  Bacteria()
