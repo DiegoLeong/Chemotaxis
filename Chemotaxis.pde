@@ -36,11 +36,35 @@ class Bacteria
 
   myX = myX + (int)(Math.random()*11)-5;
   myY = myY + (int)(Math.random()*11)-5;
+
+  //moves ainsley around
+  if(myX>mouseX)
+  {
+    myX = myX - 10;
+  }
+  
+  if(myY>mouseY)
+  {
+    myY = myY - 10;
+  }
+  
+  if (myX<mouseX)
+  {
+    myX = myX + 10;
+  }
+  
+  if (myY<mouseY)
+  {
+    myY = myY + 10;
+  }
  }
  void show()
  {
+  float centerX = myX - 150*uniscale;
+  float centerY = myY - 225*uniscale;
  	noStroke();
-  image(img,myX,myY,300*uniscale,450*uniscale);
+  image(img,centerX,centerY,300*uniscale,450*uniscale);
   //ellipse(myX,myY,4,4); 
  }
+
 }
