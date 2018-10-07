@@ -9,8 +9,8 @@
  void setup()   
  {     
  	//initialize bacteria variables here
-  frameRate(60);
- 	size(1000,500);
+  frameRate(120);
+ 	size(1000,600);
   ainsley = loadImage("ainsely.png");
   meat = loadImage("meat.png");
   basil = loadImage("basil.png");
@@ -42,7 +42,7 @@ class Ainsley
  Ainsley()
  {
   myX = 500;
-  myY = 250;
+  myY = 300;
   
  }
  void Walk()
