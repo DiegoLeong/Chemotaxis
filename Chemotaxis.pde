@@ -4,10 +4,10 @@
  void setup()   
  {     
  	//initialize bacteria variables here
-  frameRate(60);
+  frameRate(240);
  	size(1000,1000);
   img = loadImage("ainsely.png");
-  bob = new Bacteria[20];
+  bob = new Bacteria[10];
   for(int i=0; i < bob.length; i++)
   {
     bob[i]=new Bacteria();
@@ -33,9 +33,10 @@ class Bacteria
  }
  void Walk()
  {
-
-  myX = myX + (int)(Math.random()*11)-5;
-  myY = myY + (int)(Math.random()*11)-5;
+  //to make him move more than he follows the mouse maybe 
+  //call walk a couple times more and then put the mouseX/Y thing in a different function to be called once only
+  myX = myX + (int)(Math.random()*5)-2;
+  myY = myY + (int)(Math.random()*5)-2;
 
   //moves ainsley around
   if(myX>mouseX)
@@ -48,12 +49,12 @@ class Bacteria
     myY = myY - 10;
   }
   
-  if (myX<mouseX)
+  if(myX<mouseX)
   {
     myX = myX + 10;
   }
   
-  if (myY<mouseY)
+  if(myY<mouseY)
   {
     myY = myY + 10;
   }
