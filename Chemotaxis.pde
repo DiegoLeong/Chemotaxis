@@ -1,33 +1,45 @@
  //declare bacteria variables here
- PImage img;
- Bacteria[] bob;
+ PImage ainsley;
+ PImage meat;
+ PImage basil;
+ PImage pepper;
+ PImage kitchen;
+ Ainsley[] bob;
+ 
  void setup()   
  {     
  	//initialize bacteria variables here
-  frameRate(240);
+  frameRate(60);
  	size(1000,1000);
-  img = loadImage("ainsely.png");
-  bob = new Bacteria[10];
+  ainsley = loadImage("ainsely.png");
+  meat = loadImage("meat.png");
+  basil = loadImage("basil.png");
+  pepper = loadImage("pepper.png");
+  kitchen = loadImage("kitchen.jpg");
+  bob = new Ainsley[7];
   for(int i=0; i < bob.length; i++)
   {
-    bob[i]=new Bacteria();
+    bob[i]=new Ainsley();
   }
- }   
+ } 
+ 
  void draw()   
- {    //move and show the bacteria   
- 	background(0);
+ {//move and show the bacteria   
+ 	background(225);
+ image(meat,mouseX-64,mouseY-64);
   for(int i=0; i < bob.length; i++){
   bob[i].show();
   bob[i].Walk();
   
   }   
  }  
-class Bacteria
+ 
+class Ainsley
 {
   //conversionX and conversionY could be useful
   float uniscale = 0.5;
   int myX, myY;
- Bacteria()
+ Ainsley()
  {
   myX = myY = 500;
  }
@@ -35,28 +47,28 @@ class Bacteria
  {
   //to make him move more than he follows the mouse maybe 
   //call walk a couple times more and then put the mouseX/Y thing in a different function to be called once only
-  myX = myX + (int)(Math.random()*5)-2;
-  myY = myY + (int)(Math.random()*5)-2;
+  myX = myX + (int)(Math.random()*9)-4;
+  myY = myY + (int)(Math.random()*9)-4;
 
   //moves ainsley around
   if(myX>mouseX)
   {
-    myX = myX - 10;
+    myX = myX - 1;
   }
   
   if(myY>mouseY)
   {
-    myY = myY - 10;
+    myY = myY - 1;
   }
   
   if(myX<mouseX)
   {
-    myX = myX + 10;
+    myX = myX + 1;
   }
   
   if(myY<mouseY)
   {
-    myY = myY + 10;
+    myY = myY + 1;
   }
  }
  void show()
@@ -64,8 +76,11 @@ class Bacteria
   float centerX = myX - 150*uniscale;
   float centerY = myY - 225*uniscale;
  	noStroke();
-  image(img,centerX,centerY,300*uniscale,450*uniscale);
-  //ellipse(myX,myY,4,4); 
+  image(ainsley,centerX,centerY,300*uniscale,450*uniscale);
+  image(basil,myX+10,myY+25,100,100);
+  image(pepper,myX-150,myY,150,150);
+  //ellipse(myX,myY,4,4);
  }
+
 
 }
